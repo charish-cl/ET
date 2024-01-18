@@ -35,6 +35,11 @@ namespace ET
                 Log.Debug("登陆gate成功!");
 
                 Game.EventSystem.Publish(new EventType.LoginFinish() {ZoneScene = zoneScene});
+                
+                var g2cMyTest = (G2C_MyTest) await gateSession.Call(new C2G_MyTest() { Message = "" });
+                
+                Log.Debug($"收到MyTest消息: {g2cMyTest.Message}");
+                
             }
             catch (Exception e)
             {

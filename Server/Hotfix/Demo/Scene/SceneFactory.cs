@@ -16,7 +16,7 @@ namespace ET
         {
             await ETTask.CompletedTask;
             Scene scene = EntitySceneFactory.CreateScene(id, instanceId, zone, sceneType, name, parent);
-
+            //公共的组件
             scene.AddComponent<MailBoxComponent, MailboxType>(MailboxType.UnOrderMessageDispatcher);
 
             switch (scene.SceneType)
@@ -36,6 +36,11 @@ namespace ET
                 case SceneType.Location:
                     scene.AddComponent<LocationComponent>();
                     break;
+                case SceneType.Account:
+                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.OuterIPPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
+                    Log.Info($"Account Scene start...");
+                    break;
+                    
             }
 
             return scene;

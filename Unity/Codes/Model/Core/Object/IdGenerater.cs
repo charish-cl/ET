@@ -7,7 +7,7 @@ namespace ET
     public struct IdStruct
     {
         public uint Time;    // 30bit
-        public int Process;  // 18bit
+        public int Process;  // 18bit 
         public ushort Value; // 16bit
 
         public long ToLong()
@@ -46,7 +46,7 @@ namespace ET
     public struct InstanceIdStruct
     {
         public uint Time;   // 当年开始的tick 28bit
-        public int Process; // 18bit
+        public int Process; // 18bit 当前进程ID
         public uint Value;  // 18bit
 
         public long ToLong()

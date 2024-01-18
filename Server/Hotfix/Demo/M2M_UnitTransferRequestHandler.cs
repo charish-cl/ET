@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ET
 {
+	//将一个unit对象传送到Map服务器上的逻辑，是从Gate传送到Map的逻辑
 	[ActorMessageHandler]
 	public class M2M_UnitTransferRequestHandler : AMActorRpcHandler<Scene, M2M_UnitTransferRequest, M2M_UnitTransferResponse>
 	{
